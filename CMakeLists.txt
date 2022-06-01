@@ -30,21 +30,18 @@ cmake_minimum_required(VERSION 3.14)
     $<INSTALL_INTERFACE:include>
   )
 
-# # Example if this project is built separately
-# if (PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME)
-#   # Add the example target
-#   add_executable(example examples/example.cc)
-#   # Add the includes
-#   target_include_directories(example PUBLIC 
-#     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#     $<INSTALL_INTERFACE:include>
-#   )
-#   # Link libraries to the example target
-#   target_link_libraries(example
-#     PRIVATE 
-#       mpu9250_sensor
-#   )
-#   # Add hex and upload targets
-#   include(${mcu_support_SOURCE_DIR}/cmake/flash_mcu.cmake)
-#   FlashMcu(example ${MCU} ${mcu_support_SOURCE_DIR})
-# endif()
+# Example if this project is built separately
+if (PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME)
+  # Add the example target
+  add_executable(array_conv examples/cmake/array_conv.cc)
+  # Add the includes
+  target_include_directories(array_conv PUBLIC 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+  )
+  # Link libraries to the example target
+  target_link_libraries(array_conv
+    PRIVATE 
+      utils
+  )
+endif()
