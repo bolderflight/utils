@@ -88,14 +88,14 @@ std::array<std::array<double, 3>, 3> EigenToArray(const Eigen::Matrix3d &mat) {
   }
   return arr;
 }
-Eigen::Vector3f ArrayToEigen(float arr[3]) {
+Eigen::Vector3f ArrayToEigen(const float arr[3]) {
   Eigen::Vector3f vec;
   for (std::size_t i = 0; i < 3; i++) {
     vec[i] = arr[i];
   }
   return vec;
 }
-Eigen::Matrix3f ArrayToEigen(float arr[3][3]) {
+Eigen::Matrix3f ArrayToEigen(const float arr[3][3]) {
   Eigen::Matrix3f mat;
   for (std::size_t i = 0; i < 3; i++) {
     for (std::size_t j = 0; j < 3; j++) {
@@ -104,14 +104,14 @@ Eigen::Matrix3f ArrayToEigen(float arr[3][3]) {
   }
   return mat;
 }
-Eigen::Vector3d ArrayToEigen(double arr[3]) {
+Eigen::Vector3d ArrayToEigen(const double arr[3]) {
   Eigen::Vector3d vec;
   for (std::size_t i = 0; i < 3; i++) {
     vec[i] = arr[i];
   }
   return vec;
 }
-Eigen::Matrix3d ArrayToEigen(double arr[3][3]) {
+Eigen::Matrix3d ArrayToEigen(const double arr[3][3]) {
   Eigen::Matrix3d mat;
   for (std::size_t i = 0; i < 3; i++) {
     for (std::size_t j = 0; j < 3; j++) {

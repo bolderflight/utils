@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.14)
   # Project information
   project(Utils
-    VERSION 1.0.0
+    VERSION 1.0.1
     DESCRIPTION "Utility functions"
     LANGUAGES CXX
   )
